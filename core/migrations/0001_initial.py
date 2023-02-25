@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
                 ('descricao', models.TextField(blank=True, null=True)),
                 ('data_evento', models.DateTimeField()),
                 ('data_descricao', models.DateTimeField(auto_now=True)),
+                
             ],
             options={
                 'db_table': 'evento',
