@@ -1,4 +1,4 @@
-asgirer
+asgire
 Django
 et-xmlfile
 Everything-Tkinter
