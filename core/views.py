@@ -34,7 +34,7 @@ def evento (request):
     dados = {}
     if id_evento:
         dados['evento'] = Evento.objects.get(id=id_evento)
-    return render (request, 'evento.html', dados)
+    return render (request, 'evento.html',dados)
 
 
 
@@ -57,12 +57,12 @@ def submit_evento (request):
         id_evento = request.POST.get('id_evento')
         if id_evento:
             evento = Evento.objects.get(id=id_evento)
-            if evento.usuario == usuario:
-                evento.titulo = titulo
-                evento.descricao = descricao
-                evento.data_evento = data_evento
-                evento.save()
-            # Evento.objects.filter(id=id_evento).update(titulo=titulo, data_evento=data_evento, descricao=descricao, local_evento=local_evento)
+            # if evento.usuario == usuario:
+            #     evento.titulo = titulo
+            #     evento.descricao = descricao
+            #     evento.data_evento = data_evento
+            #     evento.save()
+            Evento.objects.filter(id=id_evento).update(titulo=titulo, data_evento=data_evento, descricao=descricao, local_evento=local_evento)
         else:
             Evento.objects.create(titulo=titulo, data_evento=data_evento, descricao=descricao, usuario=usuario, local_evento=local_evento)
        
